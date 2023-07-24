@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01.이벤트</title>
+</head>
+<body>
+    <h3>01.이벤트</h3>
+
+    <h4>inline</h4>
+    <button onclick="btnClick()">버튼1</button>
+    <button ondblclick="btn2blcClick()">버튼2</button>
+    <button onmouseup="MusupClick()">버튼3</button>
+    <script>
+        // 태그 이벤트 속성
+        function btnClick(){
+            alert('버튼 1 클릭...')
+        }
+
+        function btn2blcClick(){
+            alert('버튼 2 더블클릭...')
+        }
+
+        function MusupClick(){
+            alert('버튼3 클릭...')
+        }
+
+    </script>
+    
+    <h4>고전</h4>
+    <button id="btn1">버튼1</button>
+    <button id="btn2">버튼2</button>
+    <button id="btn3">버튼3</button>
+    <script>
+        //문서개체의 이벤트 속성을 이용
+        const btn1 = document.getElementById('btn1');
+        const btn2 = document.getElementById('btn2');
+        const btn3 = document.getElementById('btn3');
+
+        btn1.onclick = function(){
+            alert('버튼1 클릭...');
+        }
+
+        btn2.ondblclick = function(){
+            alert('버튼2 더블클릭...');
+        }
+
+        btn3.onmouseup = function(){
+            alert('버튼3 마우스업...');
+        }
+    </script>
+    
+    <h4>standard</h4>
+    <button id="bn1">버튼1</button>
+    <button id="bn2">버튼2</button>
+    <button id="bn3">버튼3</button>
+
+    <script>
+        //문서객체의 리스너로 이벤트 처리
+        const bn1 = document.getElementsByClassName('bn1')[0];
+        const bn2 = document.getElementsByClassName('bn2')[0];
+        const bn3 = document.getElementsByClassName('bn3')[0];
+
+        bn1.addEventListener('click', function(){
+            alert('버튼1 클릭...');
+        });
+
+        bn2.addEventListener('dblclick',()=>{
+            alert('버튼2 더블클릭...');
+        });
+        bn3.addEventListener('mouseenter', function(){
+            alert('버튼3 마우스 엔터...');
+        });
+
+    </script>
+    
+</body>
+</html>

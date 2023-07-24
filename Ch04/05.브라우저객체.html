@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05.브라우저객체</title>
+</head>
+<body>
+    <h3>05.브라우저객체</h3>
+
+    <h4>widow</h4>
+    <script>
+        //window 객체 - 최상위객체
+        console.log(window);
+
+        //브라우저 크기
+        window.document.write('innderWidth :' + window.innerWidth +'<br>');
+        window.document.write('innderheight :' + window.innerHeight + '<br>');
+        
+        //브라우저 저장소
+        window.localStorage.setItem('name', '김유신');
+        window.sessionStorage.setItem('name', '김춘신');
+    </script>
+
+    <h4>screen</h4>
+    <script>
+        // 브라우저 운영체제
+        document.write('화면 너비 : ' + screen.width + '<br>');
+        document.write('화면 높비 : ' + screen.height + '<br>');
+        document.write('화면 너비(작표 제외) : ' + screen.availWidth + '<br>');
+        document.write('화면 너비(작표 제외) : ' + screen.availHeight + '<br>');
+    </script>
+    
+    <h4>navigator</h4>
+    <script>
+        // 브라우저 정보객체
+        console.log(navigator);
+
+        document.write('브라우저 코드명 : ' + navigator.appCodeName + '<br>');
+        document.write('브라우저 이름 : ' + navigator.appName + '<br>');
+        document.write('브라우저 버전 : ' + navigator.appVersion + '<br>');
+        document.write('브라우저 플랫폼 : ' + navigator.platform + '<br>');
+        document.write('브라우저 정보 : ' + navigator.userAgent + '<br>');
+    </script>
+    
+    <h4>location</h4>
+    <button onclick="f1()">새로고침</button>
+    <button onclick="f2()">네이버</button>
+    <button onclick="f3()">구글</button>
+
+    <script>
+        //브라우저 주소
+        console.log(location);
+
+        const f1 = () => location.reload();
+
+
+        const f2 = () => location.href = 'https://naver.com';
+
+
+        const f3 = () => location.replace('https://google.com');
+    </script>
+    
+    <h4>history</h4>
+    <button onclick="back()">뒤로</button>
+    <button onclick="forward()">앞으로</button>
+    <script>
+        // 브라우저 주소 이력 객체
+        console.log(history);
+
+        document.write('history length : ' + history.length + '<br>')
+
+        const back = () => history.back();
+        
+        const forward = () => history.forward();
+
+
+    </script>
+</body>
+</html>
